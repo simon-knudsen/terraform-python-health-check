@@ -23,3 +23,21 @@ _The three EC2 instances (`dev-server`, `dev-server-two`, `dev-server-three`) ru
 
 ![Instance health check output](images/instance%20health%20check.png)  
 _`ec2-status-checks.py` runs on a schedule and prints each instance's state, instance status and system status._
+
+# Configure EC2 Server Instances: Add Environment Tags
+
+## Technologies used:
+
+Python, Boto3, AWS
+
+## Project Description:
+
+- Write a Python script that automates adding environment tags to all EC2 Server instances
+
+## Screenshots
+
+![Paris instances tagged dev](images/paris-dev.png)  
+_`add-env-tags.py` tags every EC2 instance in Europe (Paris), eu-west-3, with `environment: dev`._
+
+![Frankfurt instances tagged prod](images/frankfurt-prod.png)  
+_Every EC2 instance in Europe (Frankfurt), eu-central-1, gets the tag `environment: prod`._
