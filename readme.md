@@ -105,4 +105,7 @@ _`restore-volume.py` finds the instance's newest snapshot, calls `create_volume`
 ![Restored volume in the EC2 console](images/restore%20snapshot%20as%20volume.png)  
 _The restored volume, tagged `Name: prod`, shows up in the EC2 console as Available in eu-central-1a, created from the snapshot._
 
+![Restored volume attached to the prod instance](images/two%20volumes%20attached%20to%20instance.png)  
+_Once the volume is `available`, the script calls `attach_volume` to attach it to the `prod` instance as `/dev/xvdb`. The instance's Storage tab now shows two volumes, the root volume `/dev/xvda` and the restored one, both In-use and Attached._
+
 <br>
