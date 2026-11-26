@@ -32,7 +32,7 @@ print(latest_snapshot['StartTime'])
 
 new_volume = ec2_client.create_volume(
     SnapshotId=latest_snapshot['SnapshotId'],
-    AvailabilityZone="eu-central-1a",
+    AvailabilityZone="eu-central-1b",
     TagSpecifications=[
         {
             'ResourceType': 'volume',
