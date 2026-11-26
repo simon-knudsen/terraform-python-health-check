@@ -89,4 +89,12 @@ _Two 8 GiB gp3 EBS volumes in eu-central-1b. Only the volume tagged `Name: prod`
 ![EBS snapshots](images/snapshots.png)  
 _`volume-backups.py` runs on a schedule and calls `create_snapshot` for each `prod` volume. New snapshots start as Pending and move to Completed._
 
+### Clean Up Old Snapshots
+
+![Snapshot cleanup script output](images/snapshot%20cleanup%20python.png)  
+_`cleanup-snapshots.py` sorts each `prod` volume's snapshots by start time and calls `delete_snapshot` on all but the two newest. Each deletion returns HTTP 200._
+
+![Remaining snapshots after cleanup](images/snapshot%20clean%20up%20aws.png)  
+_After the cleanup only the two most recent snapshots are left in the EC2 console._
+
 <br>
