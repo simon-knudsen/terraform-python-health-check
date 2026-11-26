@@ -24,6 +24,8 @@ _The three EC2 instances (`dev-server`, `dev-server-two`, `dev-server-three`) ru
 ![Instance health check output](images/instance%20health%20check.png)  
 _`ec2-status-checks.py` runs on a schedule and prints each instance's state, instance status and system status._
 
+<br>
+
 # Configure EC2 Server Instances: Add Environment Tags
 
 ## Technologies used:
@@ -41,3 +43,28 @@ _`add-env-tags.py` tags every EC2 instance in Europe (Paris), eu-west-3, with `e
 
 ![Frankfurt instances tagged prod](images/frankfurt-prod.png)  
 _Every EC2 instance in Europe (Frankfurt), eu-central-1, gets the tag `environment: prod`._
+
+<br>
+
+# Automate Displaying EKS Cluster Information
+
+## Technologies used:
+
+Python, Boto3, AWS EKS
+
+## Project Description:
+
+- Write a Python script that fetches and displays EKS cluster status and information
+
+## Screenshots
+
+![EKS cluster created](images/cluster-created.png)  
+_The `myapp-eks-cluster` is active in the AWS EKS console, running Kubernetes 1.37._
+
+![EKS node group](images/node-groups.png)  
+_The cluster's managed node group runs three t3.micro worker nodes in eu-central-1, all with status Ready._
+
+![Python script output](images/python-cluster-information.png)  
+_`eks-status-checks-py` uses Boto3 to fetch the cluster's status, endpoint and Kubernetes version and prints them to the console._
+
+<br>
