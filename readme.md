@@ -109,3 +109,33 @@ _The restored volume, tagged `Name: prod`, shows up in the EC2 console as Availa
 _Once the volume is `available`, the script calls `attach_volume` to attach it to the `prod` instance as `/dev/xvdb`. The instance's Storage tab now shows two volumes, the root volume `/dev/xvda` and the restored one, both In-use and Attached._
 
 <br>
+
+# Website Monitoring and Recovery
+
+## Technologies used:
+
+Python, Linode, Docker, Linux
+
+## Project Description:
+
+- Create a server on a cloud platform
+- Install Docker and run a Docker container on the remote server
+- Write a Python script that monitors the website by accessing it and validating the HTTP response
+- Write a Python script that sends an email notification when website is down
+- Write a Python script that automatically restarts the application & server when the application is down
+
+## Screenshots
+
+![nginx container running on the Linode server](images/nginx%20container%20installed%20.png)  
+_An `nginx` container runs with Docker on the Linode server. Host port 8080 maps to container port 80._
+
+![nginx welcome page](images/nginx%20application.png)  
+_The nginx welcome page loads in the browser at port 8080 on the server's IP. This is the website the script monitors._
+
+![Monitoring script output](images/Application%20running.png)  
+_`monitor-website.py` sends a GET request to the site every 5 minutes. A 200 response prints "Application is running successfully!"._
+
+![SITE DOWN email notification](images/no%20application%20running.png)  
+_If the site can't be reached, the script sends a "SITE DOWN" email over Gmail SMTP, reboots the Linode server through the Linode API, and restarts the container over SSH. If the site responds with a status other than 200, it sends the email and restarts only the container._
+
+<br>

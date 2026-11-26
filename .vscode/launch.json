@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Monitor website",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/monitor-website.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
