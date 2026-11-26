@@ -1,8 +1,8 @@
 import boto3
 import schedule
 
-ec2_client = boto3.client('ec2', region_name="eu-west-3")
-ec2_resource = boto3.resource('ec2', region_name="eu-west-3")
+ec2_client = boto3.client('ec2', region_name="eu-central-1")
+ec2_resource = boto3.resource('ec2', region_name="eu-central-1")
 
 
 def check_instance_status():
