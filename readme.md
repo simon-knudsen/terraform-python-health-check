@@ -97,4 +97,12 @@ _`cleanup-snapshots.py` sorts each `prod` volume's snapshots by start time and c
 ![Remaining snapshots after cleanup](images/snapshot%20clean%20up%20aws.png)  
 _After the cleanup only the two most recent snapshots are left in the EC2 console._
 
+### Restore Volume from Snapshot
+
+![Restore script output](images/ec2%20available%20status.png)  
+_`restore-volume.py` finds the instance's newest snapshot, calls `create_volume` from it, and polls the new volume's state until it changes from `creating` to `available`._
+
+![Restored volume in the EC2 console](images/restore%20snapshot%20as%20volume.png)  
+_The restored volume, tagged `Name: prod`, shows up in the EC2 console as Available in eu-central-1a, created from the snapshot._
+
 <br>
