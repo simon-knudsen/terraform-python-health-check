@@ -3,7 +3,7 @@ module "eks" {
   version = "19.20.0"
 
   cluster_name = "myapp-eks-cluster"
-  cluster_version = "1.28"
+  cluster_version = "1.37"
   cluster_endpoint_public_access  = true
 
   subnet_ids = module.myapp-vpc.private_subnets
@@ -20,7 +20,7 @@ module "eks" {
       max_size     = 3
       desired_size = 3
 
-      instance_types = ["t2.small"]
+      instance_types = ["t3.micro"]
     }
   }
 }
