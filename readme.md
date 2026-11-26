@@ -68,3 +68,25 @@ _The cluster's managed node group runs three t3.micro worker nodes in eu-central
 _`eks-status-checks-py` uses Boto3 to fetch the cluster's status, endpoint and Kubernetes version and prints them to the console._
 
 <br>
+
+# Data Backup & Restore
+
+## Technologies used:
+
+Python, Boto3, AWS
+
+## Project Description:
+
+- Write a Python script that automates creating backups for EC2 Volumes
+- Write a Python script that cleans up old EC2 Volume snapshots
+- Write a Python script that restores EC2 Volumes
+
+## Screenshots
+
+![EC2 volumes](images/volumes.png)  
+_Two 8 GiB gp3 EBS volumes in eu-central-1b. Only the volume tagged `Name: prod` is selected for backups._
+
+![EBS snapshots](images/snapshots.png)  
+_`volume-backups.py` runs on a schedule and calls `create_snapshot` for each `prod` volume. New snapshots start as Pending and move to Completed._
+
+<br>
